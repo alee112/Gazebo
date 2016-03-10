@@ -63,7 +63,7 @@ class BaxterPickup:
                              'left_s1': -0.9999781166910306}
     def move_to_start(self):
         self._limb = move_to_joint_positions(self._start_position)
-        
+
     # def move_to_approach_position(self, point):
     #     # Implement this function - Baxter's gripper should be 0.15 above the target block
 
@@ -86,7 +86,6 @@ class BaxterPickup:
 	    self._check_for_blocks=False
     def main(self):
         # Program loop goes here
-        print "heythere"
         while(True):
             self._check_for_blocks=True
             if self._block_locations:
@@ -99,6 +98,7 @@ class BaxterPickup:
                     rospy.sleep(0.5)
                     return
                	self.move_to_start()
+                print self._block_locations
         
 if __name__ == "__main__":
     student_name = raw_input("Enter the your name (Last, First): ")
