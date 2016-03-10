@@ -89,7 +89,7 @@ class BaxterPickup:
     def main(self):
         # Program loop goes here
 
-       print "hi!!!!!!!!"
+       print "heythere"
 
         while(True):
             self._check_for_blocks=True
