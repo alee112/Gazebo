@@ -63,7 +63,7 @@ class BaxterPickup:
                              'left_s1': -0.9999781166910306}
     def move_to_start(self):
         self._limb = move_to_joint_positions(self._start_position)
-
+        
     # def move_to_approach_position(self, point):
     #     # Implement this function - Baxter's gripper should be 0.15 above the target block
 
