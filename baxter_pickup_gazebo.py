@@ -63,7 +63,6 @@ class BaxterPickup:
                              'left_s0': 1.78000397926829805,
                              'left_s1': -0.9999781166910306}
     def move_to_start(self):
-        # Implement this Function
         limb = baxter_interface.Limb("left")
         limb.move_to_joint_positions(self._start_position)
 
@@ -89,9 +88,7 @@ class BaxterPickup:
 	    self._check_for_blocks=False
     def main(self):
         # Program loop goes here
-
-       print "heythere"
-
+        print "heythere"
         while(True):
             self._check_for_blocks=True
             if self._block_locations:
