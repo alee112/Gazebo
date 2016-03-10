@@ -62,9 +62,10 @@ class BaxterPickup:
                              'left_e1': 1.9400238130755056,
                              'left_s0': 1.78000397926829805,
                              'left_s1': -0.9999781166910306}
-    # def move_to_start(self):
-    #     # Implement this Function
-
+    def move_to_start(self):
+        # Implement this Function
+        limb = baxter_interface.Limb("left")
+        limb.move_to_joint_positions(self._start_position)
 
     # def move_to_approach_position(self, point):
     #     # Implement this function - Baxter's gripper should be 0.15 above the target block
@@ -103,6 +104,7 @@ class BaxterPickup:
                     rospy.sleep(0.5)
                     return
                 # Start coding here
+                move_to_start(self)
 
         
 if __name__ == "__main__":
