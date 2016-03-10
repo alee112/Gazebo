@@ -88,11 +88,9 @@ class BaxterPickup:
 	    self._check_for_blocks=False
     def main(self):
         # Program loop goes here
-<<<<<<< HEAD
+
        print "hi!!!!!!!!"
-=======
-        print self._block_locations
->>>>>>> bc2618f8e0a99ac9d0d9b3ce3fed44fac3695e52
+
         while(True):
             self._check_for_blocks=True
             if self._block_locations:
