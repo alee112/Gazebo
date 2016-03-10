@@ -17,7 +17,6 @@ from baxter_pickup_msgs.srv import BaxterIK, BaxterIKRequest
 import copy
 class BaxterPickup:
     def __init__(self, limb, name, ID):
-    	print "test"
         # Initialize Node
         rospy.init_node('grabber', anonymous=True)
         # Subscribe to sensor data
@@ -101,8 +100,8 @@ class BaxterPickup:
                     rospy.sleep(0.5)
                     return
                 # Start coding here
-                move_to_start(self)
-
+               	self.move_to_start()
+               	
         
 if __name__ == "__main__":
     student_name = raw_input("Enter the your name (Last, First): ")
