@@ -99,6 +99,7 @@ class BaxterPickup:
                     rospy.sleep(0.5)
                     return
                	self.move_to_start()
+                print self._block_locations
         
 if __name__ == "__main__":
     student_name = raw_input("Enter the your name (Last, First): ")
