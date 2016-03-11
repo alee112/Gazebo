@@ -99,6 +99,7 @@ class BaxterPickup:
                     return
                	self.move_to_start()
                 print self._block_locations
+                return
         
 if __name__ == "__main__":
     student_name = raw_input("Enter the your name (Last, First): ")
