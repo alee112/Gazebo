@@ -129,18 +129,15 @@ class BaxterPickup:
 
 
                 for x in self._block_locations.block_poses:
-                    print "move"
                     self.move_to_start()
                     self.move_to_approach_position(x.point)
                     self.ungrip()
-                    print "pickup"
                     self.move_to_pickup_position(x.point)
                     self.grip()
                     self.move_to_start()
-                    print "trashcan"
                     self.move_to_trashcan()
                     self.ungrip()
-                    rospy.sleep()
+                    rospy.sleep(0.5)
                 return
         
 if __name__ == "__main__":
