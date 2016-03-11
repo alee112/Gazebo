@@ -140,6 +140,7 @@ class BaxterPickup:
                     print "trashcan"
                     self.move_to_trashcan()
                     self.ungrip()
+                    rospy.sleep()
                 return
         
 if __name__ == "__main__":
