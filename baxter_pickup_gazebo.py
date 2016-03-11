@@ -75,8 +75,8 @@ class BaxterPickup:
         srv.pose_stamp.append(PoseStamped(header=hdr, pose=pose)) 
         resp = self._ik(srv)
         dic = {}
-        for x in resp.name:
-            dic[resp.name[x]] = resp.position[x]
+        for x in resp.joint_angles.name:
+            dic[resp.joint_angles.name[x]] = resp.joint_angles.position[x]
         self._limb.move_to_joint_positions(dic)
 
     def move_to_pickup_position(self, point):
@@ -88,8 +88,8 @@ class BaxterPickup:
         srv.pose_stamp.append(PoseStamped(header=hdr, pose=pose)) 
         resp = self._ik(srv)
         dic = {}
-        for x in resp.name:
-            dic[resp.name[x]] = resp.position[x]
+        for x in resp.joint_angles.name:
+            dic[resp.joint_angles.name[x]] = resp.joint_angles.position[x]
         self._limb.move_to_joint_positions(dic)
 
 
