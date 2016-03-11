@@ -76,8 +76,8 @@ class BaxterPickup:
     # def ungrip(self):
     #     # Implement this function - open Baxter's gripper
 
-    # def move_to_trashcan(self):
-    #     # Implement this function - position Baxter's arm over the trashcan
+    def move_to_trashcan(self):
+        self._limb.move_to_joint_positions(self._trashcan_position)
 
     def model_callback(self,data): 
         # If looking for blocks, copy locations of found blocks to _block_locations   
@@ -98,7 +98,7 @@ class BaxterPickup:
                     rospy.sleep(0.5)
                     return
                	self.move_to_start()
-                print self._block_locations.block_location
+                print self._block_locations.block_poses[0]
                 return
         
 if __name__ == "__main__":
