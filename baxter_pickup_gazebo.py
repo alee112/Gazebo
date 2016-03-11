@@ -99,7 +99,7 @@ class BaxterPickup:
                     return
                	self.move_to_start()
                 print self._block_locations
-                print self._block_locations(0)
+                print self.block_poses
                 return
         
 if __name__ == "__main__":
