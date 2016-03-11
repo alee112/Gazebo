@@ -84,11 +84,11 @@ class BaxterPickup:
         srv.pose_stamp.append(PoseStamped(header=hdr, pose=pose)) 
         resp = self._ik(srv)
 
-    # def grip(self):
-    #     # Implement this function - close Baxter's gripper
+    def grip(self):
+        self._gripper.close()
 
-    # def ungrip(self):
-    #     # Implement this function - open Baxter's gripper
+    def ungrip(self):
+        self._gripper.open()
 
     def move_to_trashcan(self):
         self._limb.move_to_joint_positions(self._trashcan_position)
@@ -111,9 +111,17 @@ class BaxterPickup:
                     pub_finished.publish(finished_str)
                     rospy.sleep(0.5)
                     return
-               	self.move_to_start()
+               	
+
                 for x in self._block_locations.block_poses:
+                    self.move_to_start()
                     self.move_to_approach_position(x.point)
+                    self.ungrip()
+                    self.move_to_pickup_position(x.point)
+                    self.grip()
+                    self.move_to_start()
+                    self.move_to_trashcan()
+                    self.ungrip()
                 return
         
 if __name__ == "__main__":
