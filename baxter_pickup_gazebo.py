@@ -65,9 +65,11 @@ class BaxterPickup:
         self._limb.move_to_joint_positions(self._start_position)
 
     def move_to_approach_position(self, point):
-        print point.x
-        print point.y
-        print point.z
+        pp = point
+        pp.y += 0.15
+        print pp.x
+        print pp.y
+        print pp.z
 
     # def move_to_pickup_position(self, point):
     #     # Implement this function - Baxter's limb should be at the target block with it's gripper open but around the target block
