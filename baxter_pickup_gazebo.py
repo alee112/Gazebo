@@ -74,7 +74,7 @@ class BaxterPickup:
         srv = BaxterIKRequest() 
         srv.pose_stamp.append(PoseStamped(header=hdr, pose=pose)) 
         resp = self._ik(srv)
-        print resp
+        self._limb.move_to_joint_positions(resp)
 
     # def move_to_pickup_position(self, point):
     #     # Implement this function - Baxter's limb should be at the target block with it's gripper open but around the target block
