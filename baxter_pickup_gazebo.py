@@ -67,9 +67,13 @@ class BaxterPickup:
     def move_to_approach_position(self, point):
         pp = point
         pp.y += 0.15
-        print pp.x
-        print pp.y
-        print pp.z
+        block_location = copy.deepcopy(pp)
+        pose = Pose(position=block_location)
+        pose.orientation = self._overhead_orientation
+        hdr = Header(stamp=rospy.Time.now(), frame_id='base') 
+        srv = BaxterIKRequest() 
+        srv.pose_stamp.append(PoseStamped(header=hdr, pose=pose)) 
+        resp = self._ik(srv)
 
     # def move_to_pickup_position(self, point):
     #     # Implement this function - Baxter's limb should be at the target block with it's gripper open but around the target block
