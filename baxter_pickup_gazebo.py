@@ -77,7 +77,7 @@ class BaxterPickup:
         dic = {}
         ind = resp.joint_angles[0]
         for index in range(len(ind.name)):
-            print ind.name[index]
+            dic[ind.name[index]] = ind.position[index]
         self._limb.move_to_joint_positions(dic)
 
     def move_to_pickup_position(self, point):
@@ -91,7 +91,7 @@ class BaxterPickup:
         dic = {}
         ind = resp.joint_angles[0]
         for index in range(len(ind.name)):
-            print ind.name[index]
+            dic[ind.name[index]] = ind.position[index]
         self._limb.move_to_joint_positions(dic)
 
 
