@@ -74,7 +74,7 @@ class BaxterPickup:
         srv = BaxterIKRequest() 
         srv.pose_stamp.append(PoseStamped(header=hdr, pose=pose)) 
         resp = self._ik(srv)
-        print resp.joint_angles
+        print resp.joint_angles[0].name
         # dic = {}
         # for x in resp.joint_angles.name:
         #     dic[resp.joint_angles.name[x]] = resp.joint_angles.position[x]
