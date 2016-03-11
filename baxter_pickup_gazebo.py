@@ -98,7 +98,8 @@ class BaxterPickup:
                     rospy.sleep(0.5)
                     return
                	self.move_to_start()
-                print self._block_locations[0]
+                print self._block_locations
+                print self._block_locations(0)
                 return
         
 if __name__ == "__main__":
