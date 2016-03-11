@@ -74,6 +74,10 @@ class BaxterPickup:
         srv = BaxterIKRequest() 
         srv.pose_stamp.append(PoseStamped(header=hdr, pose=pose)) 
         resp = self._ik(srv)
+        dic = {}
+        for x in resp.name:
+            dic[resp.name[x]] = resp.position[x]
+        self._limb.move_to_joint_positions(dic)
 
     def move_to_pickup_position(self, point):
         block_location = copy.deepcopy(point)
@@ -83,7 +87,11 @@ class BaxterPickup:
         srv = BaxterIKRequest() 
         srv.pose_stamp.append(PoseStamped(header=hdr, pose=pose)) 
         resp = self._ik(srv)
-        print resp
+        dic = {}
+        for x in resp.name:
+            dic[resp.name[x]] = resp.position[x]
+        self._limb.move_to_joint_positions(dic)
+
 
     def grip(self):
         self._gripper.close()
