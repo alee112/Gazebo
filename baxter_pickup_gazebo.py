@@ -79,6 +79,7 @@ class BaxterPickup:
         for index in range(len(ind.name)):
             dic[ind.name[index]] = ind.position[index]
         self._limb.move_to_joint_positions(dic)
+        pp.z -= 0.15
 
     def move_to_pickup_position(self, point):
         block_location = copy.deepcopy(point)
